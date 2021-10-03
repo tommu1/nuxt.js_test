@@ -1,0 +1,11 @@
+version: '3'
+services:
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    command: bash -c "yarn install --verbose && yarn dev"
+    ports:
+      - 8081:8081
+    volumes:
+      - ./front/src:/src:cached
